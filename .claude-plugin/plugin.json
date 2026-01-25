@@ -1,0 +1,12 @@
+{
+  "name": "ghostty-claude-code-setup",
+  "version": "1.0.0",
+  "description": "A Claude Code plugin to set up a modern terminal experience with Ghostty, Warp-like features, zsh enhancements, and IDE-like vim keybindings",
+  "author": {
+    "name": "Ayushi Sharma",
+    "url": "https://github.com/awwsillylife"
+  },
+  "repository": "https://github.com/awwsillylife/ghostty-claude-code-setup",
+  "license": "MIT",
+  "keywords": ["terminal", "ghostty", "warp", "zsh", "vim", "setup", "macos", "claude-code", "plugin"]
+}

@@ -1,0 +1,56 @@
+# ===== Colors =====
+# Enable colors for ls and other commands
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# Colored grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Colored man pages
+export LESS_TERMCAP_mb=$'\e[1;32m'      # begin bold
+export LESS_TERMCAP_md=$'\e[1;36m'      # begin blink (cyan)
+export LESS_TERMCAP_me=$'\e[0m'         # end mode
+export LESS_TERMCAP_so=$'\e[01;44;33m'  # begin standout (yellow on blue)
+export LESS_TERMCAP_se=$'\e[0m'         # end standout
+export LESS_TERMCAP_us=$'\e[1;4;32m'    # begin underline (green)
+export LESS_TERMCAP_ue=$'\e[0m'         # end underline
+
+# ===== Aliases =====
+alias reload='source ~/.zshrc'
+
+# lsd (modern ls replacement with colors and icons)
+if command -v lsd &> /dev/null; then
+    alias ls='lsd --group-directories-first'
+    alias ll='lsd -l --group-directories-first'
+    alias la='lsd -la --group-directories-first'
+    alias lr='lsd -l --timesort'
+    alias lt='lsd --tree --depth=2'
+    alias lta='lsd --tree -a --depth=2'
+else
+    alias ll='ls -l'
+    alias la='ls -la'
+    alias lr='ls -lrt'
+fi
+
+# ===== Zsh Autosuggestions =====
+if [[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Tab = path/command completion (normal behavior)
+# Right Arrow = accept full suggestion (default)
+bindkey '^[[F' autosuggest-accept      # End key
+bindkey '^ ' autosuggest-accept        # Ctrl+Space
+bindkey '^[[1;3C' autosuggest-accept   # Option+Right (alternate)
+
+# ===== Zsh Syntax Highlighting =====
+# Must be at the end of .zshrc
+if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
