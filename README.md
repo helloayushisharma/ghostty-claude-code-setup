@@ -99,7 +99,7 @@ On macOS 13 and below, Homebrew may compile Rust tools from source. This plugin 
 
 ## Author
 
-**Ayushi Sharma** - [@awwsillylife](https://github.com/awwsillylife)
+**Ayushi Sharma** - (https://github.com/helloayushisharma)
 
 ## License
 
